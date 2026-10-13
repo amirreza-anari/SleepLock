@@ -1,4 +1,4 @@
-package ir.amirrezaanari.sleeptouch
+package ir.amirrezaanari.sleeplock
 
 import android.content.Intent
 import android.os.Build
@@ -15,9 +15,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.core.net.toUri
 import androidx.fragment.app.FragmentActivity
-import ir.amirrezaanari.sleeptouch.ui.SetupScreen
-import ir.amirrezaanari.sleeptouch.ui.SleepLockScreen
-import ir.amirrezaanari.sleeptouch.ui.theme.SleepTouchTheme
+import ir.amirrezaanari.sleeplock.ui.SetupScreen
+import ir.amirrezaanari.sleeplock.ui.SleepLockScreen
+import ir.amirrezaanari.sleeplock.ui.theme.SleepLockTheme
 
 class MainActivity : FragmentActivity() {
 
@@ -33,18 +33,16 @@ class MainActivity : FragmentActivity() {
         val showUnlockFromIntent = intent?.getBooleanExtra("SHOW_UNLOCK_DIALOG", false) ?: false
 
         setContent {
-            SleepTouchTheme {
+            SleepLockTheme {
                 var isSleepActive by remember { mutableStateOf(sleepPreferences.isSleepActive) }
                 var hasOverlayPermission by remember { mutableStateOf(Settings.canDrawOverlays(this)) }
                 val isBiometricAvailable = remember { BiometricHelper.isBiometricAvailable(this) }
 
-                // Intercept and disable Back button when Sleep Mode is active
                 BackHandler(enabled = isSleepActive) {
                     relaunchLockActivity()
                 }
 
                 if (isSleepActive) {
-                    // Full Screen Lock View
                     SleepLockScreen(
                         isBiometricAvailable = isBiometricAvailable,
                         initialShowPin = showUnlockFromIntent,
@@ -65,7 +63,6 @@ class MainActivity : FragmentActivity() {
                         }
                     )
                 } else {
-                    // Setup Screen UI
                     SetupScreen(
                         hasOverlayPermission = hasOverlayPermission,
                         isBiometricAvailable = isBiometricAvailable,
@@ -81,7 +78,7 @@ class MainActivity : FragmentActivity() {
                                 SleepOverlayService.startService(this)
                             }
                             startKioskLockMode()
-                            Toast.makeText(this, "SleepTouch Activated & Screen Locked!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "SleepLock Activated & Screen Locked!", Toast.LENGTH_SHORT).show()
                         }
                     )
                 }
@@ -176,7 +173,7 @@ class MainActivity : FragmentActivity() {
         BiometricHelper.showBiometricPrompt(
             activity = this,
             title = "Emergency Fingerprint Unlock",
-            subtitle = "Scan your registered fingerprint to deactivate SleepTouch",
+            subtitle = "Scan your registered fingerprint to deactivate SleepLock",
             onSuccess = {
                 onSuccess()
             },

@@ -1,4 +1,4 @@
-package ir.amirrezaanari.sleeptouch.ui.theme
+package ir.amirrezaanari.sleeplock.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

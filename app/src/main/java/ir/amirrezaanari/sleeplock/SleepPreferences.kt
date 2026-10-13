@@ -1,4 +1,4 @@
-package ir.amirrezaanari.sleeptouch
+package ir.amirrezaanari.sleeplock
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -6,7 +6,7 @@ import androidx.core.content.edit
 
 class SleepPreferences(context: Context) {
     private val prefs: SharedPreferences =
-        context.getSharedPreferences("sleep_touch_prefs", Context.MODE_PRIVATE)
+        context.getSharedPreferences("sleep_lock_prefs", Context.MODE_PRIVATE)
 
     var isSleepActive: Boolean
         get() = prefs.getBoolean(KEY_IS_SLEEP_ACTIVE, false)

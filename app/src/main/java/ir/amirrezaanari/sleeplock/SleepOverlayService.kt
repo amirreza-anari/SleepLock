@@ -1,4 +1,4 @@
-package ir.amirrezaanari.sleeptouch
+package ir.amirrezaanari.sleeplock
 
 import android.R
 import android.app.Notification
@@ -26,8 +26,8 @@ import androidx.savedstate.SavedStateRegistry
 import androidx.savedstate.SavedStateRegistryController
 import androidx.savedstate.SavedStateRegistryOwner
 import androidx.savedstate.setViewTreeSavedStateRegistryOwner
-import ir.amirrezaanari.sleeptouch.ui.SleepLockOverlayContent
-import ir.amirrezaanari.sleeptouch.ui.theme.SleepTouchTheme
+import ir.amirrezaanari.sleeplock.ui.SleepLockOverlayContent
+import ir.amirrezaanari.sleeplock.ui.theme.SleepLockTheme
 
 class SleepOverlayService : Service(), LifecycleOwner, ViewModelStoreOwner, SavedStateRegistryOwner {
 
@@ -68,22 +68,22 @@ class SleepOverlayService : Service(), LifecycleOwner, ViewModelStoreOwner, Save
     }
 
     private fun startForegroundNotification() {
-        val channelId = "sleep_touch_service_channel"
+        val channelId = "sleep_lock_service_channel"
         val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 channelId,
-                "SleepTouch Service",
-                NotificationManager.IMPORTANCE_LOW
+                "SleepLock Service",
+                NotificationManager.IMPORTANCE_LOW,
             ).apply {
-                description = "Keeps Sleep Touch lock overlay active"
+                description = "Keeps Sleep Lock overlay active"
             }
             notificationManager.createNotificationChannel(channel)
         }
 
         val notification: Notification = NotificationCompat.Builder(this, channelId)
-            .setContentTitle("SleepTouch Active")
+            .setContentTitle("SleepLock Active")
             .setContentText("Sleep mode is currently locking your screen")
             .setSmallIcon(R.drawable.ic_lock_lock)
             .setPriority(NotificationCompat.PRIORITY_LOW)
@@ -123,7 +123,7 @@ class SleepOverlayService : Service(), LifecycleOwner, ViewModelStoreOwner, Save
             setViewTreeSavedStateRegistryOwner(this@SleepOverlayService)
 
             setContent {
-                SleepTouchTheme {
+                SleepLockTheme {
                     SleepLockOverlayContent(
                         onUnlockRequested = {
                             removeOverlay()

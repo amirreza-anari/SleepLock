@@ -1,4 +1,4 @@
-package ir.amirrezaanari.sleeptouch.ui.theme
+package ir.amirrezaanari.sleeplock.ui.theme
 
 import android.app.Activity
 import androidx.compose.material3.MaterialTheme
@@ -25,7 +25,7 @@ private val DarkColorScheme = darkColorScheme(
 )
 
 @Composable
-fun SleepTouchTheme(
+fun SleepLockTheme(
     content: @Composable () -> Unit
 ) {
     val view = LocalView.current
@@ -33,7 +33,9 @@ fun SleepTouchTheme(
         SideEffect {
             val window = (view.context as? Activity)?.window
             window?.let {
+                @Suppress("DEPRECATION")
                 it.statusBarColor = DeepBackground.toArgb()
+                @Suppress("DEPRECATION")
                 it.navigationBarColor = DeepBackground.toArgb()
                 val insetsController = WindowCompat.getInsetsController(it, view)
                 insetsController.isAppearanceLightStatusBars = false

@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "ir.amirrezaanari.sleeptouch"
+    namespace = "ir.amirrezaanari.sleeplock"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "ir.amirrezaanari.sleeptouch"
+        applicationId = "ir.amirrezaanari.sleeplock"
         minSdk = 24
         targetSdk = 37
         versionCode = 1

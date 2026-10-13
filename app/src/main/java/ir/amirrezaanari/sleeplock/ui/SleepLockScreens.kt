@@ -1,4 +1,4 @@
-package ir.amirrezaanari.sleeptouch.ui
+package ir.amirrezaanari.sleeplock.ui
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -101,7 +101,7 @@ fun SetupScreen(
                 Spacer(modifier = Modifier.height(12.dp))
 
                 Text(
-                    text = "SleepTouch",
+                    text = "SleepLock",
                     fontSize = 28.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.White
@@ -129,7 +129,7 @@ fun SetupScreen(
                             )
                             Spacer(modifier = Modifier.height(2.dp))
                             Text(
-                                text = "SleepTouch needs overlay permission to cover the full screen over other apps.",
+                                text = "SleepLock needs overlay permission to cover the full screen over other apps.",
                                 fontSize = 12.sp,
                                 color = Color(0xFFD1D5DB)
                             )
@@ -244,7 +244,6 @@ fun SetupScreen(
                         if (confirmPin.isNotEmpty()) {
                             confirmPin = confirmPin.dropLast(1)
                         } else {
-                            // Back to first PIN step
                             step = SetupStep.ENTER_PIN
                             firstPin = ""
                         }
@@ -349,7 +348,7 @@ fun SleepLockScreen(
                 Spacer(modifier = Modifier.height(4.dp))
 
                 Text(
-                    text = "Screen is locked by SleepTouch",
+                    text = "Screen is locked by SleepLock",
                     fontSize = 14.sp,
                     color = Color(0xFF9CA3AF)
                 )
@@ -623,7 +622,7 @@ fun SleepLockOverlayContent(
                 shape = RoundedCornerShape(16.dp),
                 modifier = Modifier.height(52.dp)
             ) {
-                Text("🔓 Open SleepTouch Unlock", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+                Text("🔓 Open SleepLock Unlock", fontSize = 16.sp, fontWeight = FontWeight.Bold)
             }
         }
     }

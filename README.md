@@ -1,7 +1,7 @@
-# 🌙 SleepTouch
+# 🌙 SleepLock
 
 <p align="center">
-  <img src="art/logo.svg" width="140" height="140" alt="SleepTouch Logo" />
+  <img src="art/logo.svg" width="140" height="140" alt="SleepLock Logo" />
 </p>
 
 <p align="center">
@@ -17,9 +17,9 @@
 
 ---
 
-## 📖 About SleepTouch
+## 📖 About SleepLock
 
-**SleepTouch** is an Android security application designed to protect your device privacy while you are asleep. Before going to bed, set a temporary 4-digit PIN for the night. Once activated, SleepTouch enforces a full-screen lock overlay and system kiosk mode to block unauthorized phone access.
+**SleepLock** is an Android security application designed to protect your device privacy while you are asleep. Before going to bed, set a temporary 4-digit PIN for the night. Once activated, SleepLock enforces a full-screen lock overlay and system kiosk mode to block unauthorized phone access.
 
 ---
 
@@ -65,8 +65,8 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/amirreza-anari/SleepTouch.git
-   cd SleepTouch
+   git clone https://github.com/amirreza-anari/SleepLock.git
+   cd SleepLock
    ```
 2. Open the project in **Android Studio**.
 3. Sync Gradle dependencies:

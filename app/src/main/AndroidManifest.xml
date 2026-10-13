@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SleepTouch">
+        android:theme="@style/Theme.SleepLock">
 
         <activity
             android:name=".MainActivity"
@@ -28,7 +28,7 @@
             android:showWhenLocked="true"
             android:turnScreenOn="true"
             android:launchMode="singleInstance"
-            android:theme="@style/Theme.SleepTouch"
+            android:theme="@style/Theme.SleepLock"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +44,7 @@
             tools:targetApi="34">
             <property
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
-                android:value="SleepTouch Lock Screen Overlay Service" />
+                android:value="SleepLock Lock Screen Overlay Service" />
         </service>
 
     </application>

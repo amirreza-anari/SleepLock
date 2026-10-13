@@ -22,6 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SleepTouch"
+rootProject.name = "SleepLock"
 include(":app")
- 

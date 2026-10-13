@@ -1,4 +1,4 @@
-package ir.amirrezaanari.sleeptouch
+package ir.amirrezaanari.sleeplock
 
 import android.content.Context
 import androidx.biometric.BiometricManager
@@ -18,7 +18,7 @@ object BiometricHelper {
     fun showBiometricPrompt(
         activity: FragmentActivity,
         title: String = "Emergency Unlock",
-        subtitle: String = "Use your fingerprint to unlock phone",
+        subtitle: String = "Use your fingerprint to unlock SleepLock",
         onSuccess: () -> Unit,
         onError: (String) -> Unit
     ) {
