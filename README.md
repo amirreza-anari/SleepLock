@@ -1,7 +1,7 @@
 # 🌙 SleepTouch
 
 <p align="center">
-  <img src="app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" width="120" height="120" alt="SleepTouch Logo" />
+  <img src="art/logo.svg" width="140" height="140" alt="SleepTouch Logo" />
 </p>
 
 <p align="center">
